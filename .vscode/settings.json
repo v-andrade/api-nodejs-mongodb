@@ -9,5 +9,11 @@
         "activityBarBadge.foreground": "#e7e7e7",
         "tab.activeBorder": "#18d868"
     },
-    "peacock.color": "#13aa52"
+    "peacock.color": "#13aa52",
+    "azureFunctions.deploySubpath": ".",
+    "azureFunctions.postDeployTask": "npm install",
+    "azureFunctions.projectLanguage": "JavaScript",
+    "azureFunctions.projectRuntime": "~3",
+    "debug.internalConsoleOptions": "neverOpen",
+    "azureFunctions.preDeployTask": "npm prune"
 }
