@@ -1,9 +1,20 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models/User');
+const User = require('../../models/sales/User');
 
-// Get back all the users
+// Home
 router.get('/', async (req, res) => {
+    res.json({ status: 200, data: 'sales' })
+});
+
+
+// router.get('/:userId', (req, res) => {
+//     const { userId } = req.params;
+//     res.send(`we are on userID ${userId}`)
+// })
+
+// Users
+router.get('/users', async (req, res) => {
     try {
         const users = await User.find();
         res.json({ status: 200, data: users })
@@ -13,13 +24,9 @@ router.get('/', async (req, res) => {
 });
 
 
-router.get('/:userId', (req, res) => {
-    const { userId } = req.params;
-    res.send(`we are on userID ${userId}`)
-})
 
-// insert an user
-router.post('/', async (req, res) => {
+// insert an users
+router.post('/users', async (req, res) => {
 
     const user = new User({
         ...req.body

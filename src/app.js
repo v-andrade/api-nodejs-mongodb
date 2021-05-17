@@ -9,11 +9,9 @@ const port = process.env.PORT || 3000;
 app.use(express.json());//body-parser
 
 // inport Routers
-const usersRoute = require('./routers/users');
-const clientRoute = require('./routers/clients');
+const salesRoute = require('./api/routers/sales');
 
-app.use('/users', usersRoute);
-app.use('/client', clientRoute);
+app.use('/api/sales', salesRoute);
 
 
 
@@ -51,3 +49,5 @@ mongoose.connect(DB_CONNECTION_URI,
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
 });
+
+module.exports = app;
